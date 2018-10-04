@@ -89,38 +89,13 @@ int nextId(sFilm listFilm[],int len)
     return value + 1;
 }
 
-void listar(sFilm listFilm[], int len)
-{
-    int  choice;
-    system("cls");
-    do
-    {
-        choice = getIntOnly("Listar\n\n1.Listar Peliculas\n2.\n3.Regresar\nIngrese una opcion: ");
-        switch(choice)
-        {
-        case 1:
-            system("cls");
-            printFilm(listFilm, len);
-            system("pause");
-            break;
-        case 2:
-            break;
-        case 3:
-            choice = 3;
-            break;
-        default:
-            system("cls");
-            printf("No es una opcion valida.");
-        }
-        system("cls");
-    }while(choice != 3);
-}
 
-void printAnFilm(sFilm listFilm[], int index)
+
+void printAFilm(sFilm listFilm[], int index)
 {
     if(listFilm[index].isEmpty == TAKEN)
     {
-        printf(" %5d| %-8s    |    %d    |  %d  | %-8s\n", listFilm[index].id, listFilm[index].titulo,
+        printf(" %5d| %-15s         | %5d    |  %5d  | %-8s\n", listFilm[index].id, listFilm[index].titulo,
                listFilm[index].director, listFilm[index].anio, listFilm[index].nacionalidad);
     }
 }
@@ -128,12 +103,12 @@ void printAnFilm(sFilm listFilm[], int index)
 void printFilm(sFilm listFilm[], int len)
 {
     int i;
-    printf("\n\nId    | Titulo      | Director| Anio   | Nacionalidad  \n");
+    printf("\n\n    Id| Titulo                  | Director |   Anio  | Nacionalidad  \n");
     for(i = 0; i < len; i++)
     {
         if(listFilm[i].isEmpty != FREE)
         {
-            printAnFilm(listFilm, i);
+            printAFilm(listFilm, i);
         }
     }
 }
@@ -235,10 +210,10 @@ void modifyMenu(sFilm listFilm[], int position)
 
 void modifyTitle(sFilm listFilm[], int position)
 {
-    char auxTitle[100];
+    char auxTitle[60];
     system("cls");
     printf("Modificacion del titulo\n\n");
-    printAnFilm(listFilm, position);
+    printAFilm(listFilm, position);
     getStringOnly("\nIngrese el nuevo titulo: ", auxTitle);
     printf("\nEsta seguro que desea cambiar el titulo?(s/n): ");
     if(getch() == 's')
@@ -252,7 +227,7 @@ void modifyAnio(sFilm listFilm[], int position)
     int auxAnio;
     system("cls");
     printf("Modificacion del anio\n\n");
-    printAnFilm(listFilm, position);
+    printAFilm(listFilm, position);
     auxAnio = validAnio("\nIngrese el nuevo anio: ");
     printf("\nEsta seguro que desea cambiar el anio?(s/n): ");
     if(getch() == 's')
@@ -266,7 +241,7 @@ void modifyNacionalidad(sFilm listFilm[], int position)
     char auxNacionalidad[100];
     system("cls");
     printf("Modificacion de nacionalidad\n\n");
-    printAnFilm(listFilm, position);
+    printAFilm(listFilm, position);
     getStringOnly("\nIngrese la nueva nacionalidad: ", auxNacionalidad);
     printf("\nEsta seguro que desea cambiar la nacionalidad?(s/n): ");
     if(getch() == 's')
@@ -280,7 +255,7 @@ void modifyDirector(sFilm listFilm[], int position)
     int auxDirector;
     system("cls");
     printf("Modificacion del director\n\n");
-    printAnFilm(listFilm, position);
+    printAFilm(listFilm, position);
     auxDirector = getIntOnly("\nIngrese el nuevo director: ");
     printf("\nEsta seguro que desea cambiar el director?(s/n): ");
     if(getch() == 's')
@@ -292,7 +267,7 @@ void modifyDirector(sFilm listFilm[], int position)
 void initPeliculaHardCode(sFilm listFilm[])
 {
     int id[4] = {100,101,102,103};
-    char titulo[][50] = {"luna", "marte", "jupiter", "saturno"};
+    char titulo[][50] = {"capitan america", "marte", "jupiter", "saturno"};
     int anio[4] = {2000,2001,2010,2018};
     int director[4] = {1,2,3,4};
     char nacionalidad[][50] = {"argentina", "eeuu", "colombia", "venezuela"};
@@ -318,7 +293,7 @@ int removeFilm(sFilm listFilm[], int len)
     int flag;
 
     system("cls");
-    printf("BAJA\n\n");
+    printf("BAJA (pelicula)\n\n");
     printFilm(listFilm, len);
     auxId = getIntOnly("\nIngrese el numero de Id a dar de baja: ");
     index = findFilmById(listFilm, len, auxId);

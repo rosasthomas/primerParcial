@@ -36,7 +36,9 @@ sDirector setDirec(sDirector listDirec[])
     fflush(stdin);
     getStringOnly("Ingrese el pais origen: ", director.paisOrigen);
 
-    director.fechaNacimiento = 0;
+    director.fechaNacimiento.dia = 20;
+    director.fechaNacimiento.mes = 10;
+    director.fechaNacimiento.anio = 2000;
 
     director.isEmpty = TAKEN;
 
@@ -165,3 +167,82 @@ char validAnioDirec(char mensaje[])
     return anio;
 }
 */
+
+void printADirector(sDirector listDirec[], int index)
+{
+    if(listDirec[index].isEmpty == TAKEN)
+    {
+        printf(" %5d| %-15s         | %-15s         \n", listDirec[index].id, listDirec[index].nombre,
+               listDirec[index].paisOrigen);
+    }
+}
+
+void printDirector(sDirector listDirec[], int len)
+{
+    int i;
+    printf("\n\n    Id| Nombre                | Pais de origen   \n");
+    for(i = 0; i < len; i++)
+    {
+        if(listDirec[i].isEmpty != FREE)
+        {
+            printADirector(listDirec, i);
+        }
+    }
+}
+
+int initDirec(sDirector listDirec[], int len)
+{
+    int flag = -1;
+    int i;
+    for(i = 0 ; i < len; i++)
+    {
+        listDirec[i].isEmpty = FREE;
+        flag = 0;
+    }
+
+    return flag;
+}
+
+int removeDirec(sDirector listDirec[], int len)
+{
+    char auxNombre[256];
+    int index;
+    int flag;
+
+    system("cls");
+    printf("BAJA (director)\n\n");
+    printDirector(listDirec, len);
+    getStringOnly("\nIngrese el nombre del director a dar de baja: ", auxNombre);
+    index = findDirecByName(listDirec, len, auxNombre);
+    if(index == -1)
+    {
+        printf("No se encuentra ese nombre.\n");
+        system("pause");
+        flag = -1;
+    }
+    else
+    {
+        printf("\nEsta seguro que desea dar de baja?(s/n): ");
+        if(getch() == 's')
+        {
+            listDirec[index].isEmpty = FREE;
+            flag = 0;
+        }
+    }
+    return flag;
+}
+
+int findDirecByName(sDirector listDirec[], int len, char name[])
+{
+    int index = -1;
+    int i;
+    for(i = 0; i < len; i ++)
+    {
+        if(listDirec[i].isEmpty != FREE && strcmp(listDirec[i].nombre, name) == 0)
+        {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}

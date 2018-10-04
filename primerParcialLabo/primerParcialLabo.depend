@@ -55,3 +55,59 @@
 1538489321 d:\rosas\primerparciallabo\parcialpeliculas.h
 	"bibliotecaGetsYComprobaciones.h"
 
+1538482028 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaestructuras.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"bibliotecaEstructuras.h"
+	"bibliotecaGetsYComprobaciones.h"
+
+1538480632 c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaestructuras.h
+
+1538480632 c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecagetsycomprobaciones.h
+
+1538683619 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecagetsycomprobaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1538692121 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bibliotecaParcial.h"
+	"bibliotecaGetsYComprobaciones.h"
+
+1538691392 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.h
+	"bibliotecaGetsYComprobaciones.h"
+
+1538692669 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.h
+	"bibliotecaGetsYComprobaciones.h"
+
+1538691392 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"parcialPeliculas.h"
+
+1538692706 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"bibliotecaGetsYComprobaciones.h"
+	"parcialDirectores.h"
+
+1538691672 c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.h
+	"parcialDirectores.h"
+	"parcialPeliculas.h"
+
+1538691791 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"bibliotecaParcial.h"
+

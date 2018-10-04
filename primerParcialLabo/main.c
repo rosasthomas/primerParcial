@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "parcialPeliculas.h"
-#include "parcialDirectores.h"
+#include "bibliotecaParcial.h"
 #include "bibliotecaGetsYComprobaciones.h"
 
 int main()
@@ -9,7 +8,8 @@ int main()
     sFilm listFilm[LEN_PEL];
     sDirector listDirec[LEN_DIREC];
     int choice;
-    int isError;
+    int isErrorFilm;
+    int isErrorDirec;
     int isErrorAdd;
     int isErrorRemove;
     int flagIsCharged = 1;
@@ -18,9 +18,10 @@ int main()
 
     do
     {
-        isError = initFilm(listFilm, LEN_PEL);
+        isErrorFilm = initFilm(listFilm, LEN_PEL);
+        isErrorDirec = initDirec(listDirec, LEN_DIREC);
         initPeliculaHardCode(listFilm);
-    }while(isError == -1);
+    }while(isErrorFilm == -1 || isErrorDirec == -1);
 
     do
     {
@@ -93,7 +94,7 @@ int main()
                     printf("\n\nAun no se han cargado peliculas.\n");
                     break;
                 }
-            listar(listFilm, LEN_PEL);
+            listar(listFilm, LEN_PEL, listDirec, LEN_DIREC);
             break;
         case 7:
             choice = 7;

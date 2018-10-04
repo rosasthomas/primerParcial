@@ -22,6 +22,12 @@ typedef struct
  */
 int initFilm(sFilm listFilm[], int len);
 
+/** \brief load the information about a film
+ *
+ * \param listFilm sFilm array of employees
+ * \return sFilm data set of film
+ *
+ */
 sFilm setFilm(sFilm listFilm[]);
 
 /** \brief find free slot in flag(isEmpty)
@@ -49,14 +55,8 @@ int addFilm(sFilm listFilm[]);
  */
 int nextId(sFilm listFilm[],int len);
 
-/** \brief modify information about an Film
- *
- * \param listFilm[] sFilm array of Film
- * \return int (-1) if error, (0) if ok
- *
- */
 
-void listar(sFilm listFilm[], int len);
+
 
 /** \brief print information about one Film
  *
@@ -65,7 +65,7 @@ void listar(sFilm listFilm[], int len);
  * \return void
  *
  */
-void printAnFilm(sFilm listFilm[], int index);
+void printAFilm(sFilm listFilm[], int index);
 
 /** \brief print Film array
  *
@@ -76,23 +76,92 @@ void printAnFilm(sFilm listFilm[], int index);
  */
 void printFilm(sFilm listFilm[], int len);
 
+/** \brief check if the enter number is a logic year
+ *
+ * \param mensaje[] char
+ * \return int year
+ *
+ */
 int validAnio(char mensaje[]);
 
+/** \brief find a film by id and returns the position in array
+ *
+ * \param listFilm[] sFilm array of films
+ * \param len int array length
+ * \param id int id to search
+ * \return int (-1) if error or film index position
+ *
+ */
 int findFilmById(sFilm listFilm[], int len, int id);
 
+/** \brief menu to select what modify
+ *
+ * \param listFilm[] sFilm array of films
+ * \param position int film position in array
+ * \return void
+ *
+ */
 void modifyMenu(sFilm listFilm[], int position);
 
+/** \brief modify the title of a film
+ *
+ * \param listFilm[] sFilm array of films
+ * \param position int film position in array
+ * \return void
+ *
+ */
 void modifyTitle(sFilm listFilm[], int position);
 
+/** \brief modify the year of a film
+ *
+ * \param listFilm[] sFilm array of films
+ * \param position int film position in array
+ * \return void
+ *
+ */
 void modifyAnio(sFilm listFilm[], int position);
 
+/** \brief modify the director of a film
+ *
+ * \param listFilm[] sFilm array of films
+ * \param position int film position in array
+ * \return void
+ *
+ */
 void modifyDirector(sFilm listFilm[], int position);
 
+/** \brief modify the nationality of a film
+ *
+ * \param listFilm[] sFilm array of films
+ * \param position int film position in array
+ * \return void
+ *
+ */
 void modifyNacionalidad(sFilm listFilm[], int position);
 
+
+/** \brief modify film interface
+ *
+ * \param listFilm[] sFilm arraoy of films
+ * \return int (-1) if error, (0) if ok
+ *
+ */
 int modifyFilm(sFilm listFilm[]);
 
+/** \brief initialize harcode of films
+ *
+ * \param listFilm[] sFilm array of films
+ * \return void
+ *
+ */
 void initPeliculaHardCode(sFilm listFilm[]);
 
+/** \brief remove film interface
+ *
+ * \param listFilm[] sFilm array of films
+ * \param len int array length
+ * \return int (-1) if error, (0) if ok
+ *
+ */
 int removeFilm(sFilm listFilm[], int len);
 

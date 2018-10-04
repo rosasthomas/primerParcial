@@ -31,14 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="bibliotecaEstructuras.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="bibliotecaEstructuras.h" />
 		<Unit filename="bibliotecaGetsYComprobaciones.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="bibliotecaGetsYComprobaciones.h" />
+		<Unit filename="bibliotecaParcial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bibliotecaParcial.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

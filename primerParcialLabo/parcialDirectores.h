@@ -5,10 +5,10 @@
 
 typedef struct
 {
-    char dia[3];
-    char mes[3];
-    char anio[5];
-    char fecha[11];
+    int dia;
+
+    int mes;
+    int anio;
 }sFecha;
 
 typedef struct
@@ -35,3 +35,13 @@ char validDia(char mensaje[]);
 char validMes(char mensaje[]);
 
 char validAnioDirec(char mensaje[]);
+
+void printDirector(sDirector listDirec[], int len);
+
+void printADirector(sDirector listDirec[], int index);
+
+int initDirec(sDirector listDirec[], int len);
+
+int findDirecByName(sDirector listDirec[], int len, char name[]);
+
+int removeDirec(sDirector listDirec[], int len);
