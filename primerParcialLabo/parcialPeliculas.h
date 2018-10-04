@@ -24,7 +24,7 @@ int initFilm(sFilm listFilm[], int len);
 
 /** \brief load the information about a film
  *
- * \param listFilm sFilm array of employees
+ * \param listFilm sFilm array of films
  * \return sFilm data set of film
  *
  */
@@ -54,9 +54,6 @@ int addFilm(sFilm listFilm[]);
  *
  */
 int nextId(sFilm listFilm[],int len);
-
-
-
 
 /** \brief print information about one Film
  *
