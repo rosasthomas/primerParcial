@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1538482026 source:d:\rosas\primerparciallabo\bibliotecaestructuras.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"bibliotecaEstructuras.h"
+	"bibliotecaGetsYComprobaciones.h"
+
+1538480630 d:\rosas\primerparciallabo\bibliotecaestructuras.h
+
+1538480630 d:\rosas\primerparciallabo\bibliotecagetsycomprobaciones.h
+
+1538480630 source:d:\rosas\primerparciallabo\bibliotecagetsycomprobaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1538483100 source:d:\rosas\primerparciallabo\bibliotecasrosas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"bibliotecasRosas.h"
+	"bibliotecaGetsYComprobaciones.h"
+
+1538483226 d:\rosas\primerparciallabo\bibliotecasrosas.h
+
+1538490410 source:d:\rosas\primerparciallabo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"parcialPeliculas.h"
+	"parcialDirectores.h"
+	"bibliotecaGetsYComprobaciones.h"
+
+1538491163 source:d:\rosas\primerparciallabo\parcialdirectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"bibliotecaGetsYComprobaciones.h"
+	"parcialDirectores.h"
+
+1538492470 d:\rosas\primerparciallabo\parcialdirectores.h
+	"bibliotecaGetsYComprobaciones.h"
+
+1538489044 source:d:\rosas\primerparciallabo\parcialpeliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"parcialPeliculas.h"
+
+1538489321 d:\rosas\primerparciallabo\parcialpeliculas.h
+	"bibliotecaGetsYComprobaciones.h"
+
