@@ -36,15 +36,19 @@ sDirector setDirec(sDirector listDirec[])
     fflush(stdin);
     getStringOnly("Ingrese el pais origen: ", director.paisOrigen);
 
-    director.fechaNacimiento.dia = 20;
-    director.fechaNacimiento.mes = 10;
-    director.fechaNacimiento.anio = 2000;
+    setDate(director);
 
     director.isEmpty = TAKEN;
 
     return director;
 }
 
+void setDate(sDirector director)
+{
+    director.fechaNacimiento.dia = 20;//validDay("Ingrese el dia: ");
+    director.fechaNacimiento.mes = 12;//validMonth("Ingrese el mes: ");
+    director.fechaNacimiento.anio = 2000;//validYearDirec("Ingrese el anio: ");
+}
 int findFreeSlotDirec(sDirector listDirec[], int len)
 {
     int index = -1;
@@ -77,36 +81,15 @@ int nextIdDirec(sDirector listDirec[],int len)
     return value + 1;
 }
 
-/*sFecha getFecha(sDirector listDirec[])
+int validDay(char mensaje[])
 {
-    sFecha fecha;
-    char barra[2] = {"/"};
-
-    //barra = "/";
-    char dia[3];
-    dia = validDia("Ingrese el dia: ");
-    strcpy(fecha.dia, dia);
-    fecha.mes = validMes("Ingrese el mes: ");
-    fecha.anio = validAnioDirec("Ingrese el anio: ");
-
-    strcpy(fecha.fecha, fecha.dia);
-    strcpy(fecha.fecha, barra);
-    strcpy(fecha.fecha, fecha.mes);
-    strcpy(fecha.fecha, barra);
-    strcpy(fecha.fecha, fecha.anio);
-
-    return fecha;
-}
-
-char validDia(char mensaje[])
-{
-    char dia[3];
+    int day;
     int flag;
 
     do
    {
-        getStringNumber(mensaje, dia);
-        if(dia < '1' && dia > '31')
+        day = getIntOnly(mensaje);
+        if(day < 1 || day > 31)
         {
             system("cls");
             printf("\nEl dia no es valido.\n");
@@ -118,18 +101,18 @@ char validDia(char mensaje[])
         }
    }while(flag != 1);
 
-    return dia;
+    return day;
 }
 
-char validMes(char mensaje[])
+int validMonth(char mensaje[])
 {
-    char mes[3];
+    int month;
     int flag;
 
     do
    {
-        getStringNumber(mensaje, mes);
-        if(mes < '1' || mes > '12')
+        month = getIntOnly(mensaje);
+        if(month < 1 || month > 12)
         {
             system("cls");
             printf("\nEl mes no es valido.\n");
@@ -141,18 +124,18 @@ char validMes(char mensaje[])
         }
    }while(flag != 1);
 
-    return mes;
+    return month;
 }
 
-char validAnioDirec(char mensaje[])
+int validYearDirec(char mensaje[])
 {
-    char anio[5];
+    int year;
     int flag;
 
     do
    {
-        getStringNumber(mensaje, anio);
-        if(anio < '1' || anio > '2018')
+        year = getIntOnly(mensaje);
+        if(year < 1000 || year > 2018)
         {
             system("cls");
             printf("\nEl anio no es valido.\n");
@@ -164,23 +147,22 @@ char validAnioDirec(char mensaje[])
         }
    }while(flag != 1);
 
-    return anio;
+    return year;
 }
-*/
 
 void printADirector(sDirector listDirec[], int index)
 {
     if(listDirec[index].isEmpty == TAKEN)
     {
-        printf(" %5d| %-15s         | %-15s         \n", listDirec[index].id, listDirec[index].nombre,
-               listDirec[index].paisOrigen);
+        printf(" %5d| %-15s       | %-10s          | %d\n", listDirec[index].id, listDirec[index].nombre,
+               listDirec[index].paisOrigen, listDirec[index].fechaNacimiento.dia);
     }
 }
 
 void printDirector(sDirector listDirec[], int len)
 {
     int i;
-    printf("\n\n    Id| Nombre                | Pais de origen   \n");
+    printf("\n\n    Id| Nombre                | Pais de origen     |Fecha de nacimiento\n");
     for(i = 0; i < len; i++)
     {
         if(listDirec[i].isEmpty != FREE)

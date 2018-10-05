@@ -30,7 +30,7 @@ int main()
         switch(choice)
         {
         case 1://alta pelicula
-            isErrorAdd = addFilm(listFilm);
+            isErrorAdd = addFilm(listFilm, listDirec);
                 if(isErrorAdd == 0)
                 {
                     flagIsCharged = 1;

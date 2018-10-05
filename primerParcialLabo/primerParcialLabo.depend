@@ -73,26 +73,26 @@
 	<stdlib.h>
 	<string.h>
 
-1538692121 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\main.c
+1538768363 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\main.c
 	<stdio.h>
 	<stdlib.h>
 	"bibliotecaParcial.h"
 	"bibliotecaGetsYComprobaciones.h"
 
-1538693417 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.h
+1538768279 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.h
 	"bibliotecaGetsYComprobaciones.h"
 
-1538693417 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.h
+1538764483 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.h
 	"bibliotecaGetsYComprobaciones.h"
 
-1538691392 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.c
+1538768279 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	"parcialPeliculas.h"
 
-1538692706 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.c
+1538767676 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -100,11 +100,11 @@
 	"bibliotecaGetsYComprobaciones.h"
 	"parcialDirectores.h"
 
-1538691672 c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.h
+1538768355 c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.h
 	"parcialDirectores.h"
 	"parcialPeliculas.h"
 
-1538691791 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.c
+1538769364 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

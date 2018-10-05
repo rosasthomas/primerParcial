@@ -6,7 +6,6 @@
 typedef struct
 {
     int dia;
-
     int mes;
     int anio;
 }sFecha;
@@ -109,3 +108,11 @@ int findDirecByName(sDirector listDirec[], int len, char name[]);
  *
  */
 int removeDirec(sDirector listDirec[], int len);
+
+int validDay(char mensaje[]);
+
+int validMonth(char mensaje[]);
+
+int validYearDirec(char mensaje[]);
+
+void setDate(sDirector director);

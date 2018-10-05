@@ -22,13 +22,7 @@ typedef struct
  */
 int initFilm(sFilm listFilm[], int len);
 
-/** \brief load the information about a film
- *
- * \param listFilm sFilm array of films
- * \return sFilm data set of film
- *
- */
-sFilm setFilm(sFilm listFilm[]);
+
 
 /** \brief find free slot in flag(isEmpty)
  *
@@ -38,13 +32,7 @@ sFilm setFilm(sFilm listFilm[]);
  *
  */
 int findFreeSlot(sFilm listFilm[], int len);
-/** \brief add a Film in array of Film
- *
- * \param listFilm[] sFilm array of Film
- * \return int return (-1) if error, (0) if ok
- *
- */
-int addFilm(sFilm listFilm[]);
+
 
 /** \brief find the next id for Film
  *

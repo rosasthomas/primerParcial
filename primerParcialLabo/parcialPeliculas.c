@@ -17,45 +17,8 @@ int initFilm(sFilm listFilm[], int len)
     return flag;
 }
 
-int addFilm(sFilm listFilm[])
-{
-    int flag;
-    int indexFreeSlot;
 
-    indexFreeSlot = findFreeSlot(listFilm, LEN_PEL);
-    if(indexFreeSlot == -1)
-    {
-        printf("\nNo quedan espacios libres.\n");
-        flag = -1;
-    }
-    system("cls");
-    printf("ALTA\n\n");
-    listFilm[indexFreeSlot] = setFilm(listFilm);
-    flag = 0;
 
-    return flag;
-}
-
-sFilm setFilm(sFilm listFilm[])
-{
-    sFilm film;
-
-    film.id = nextId(listFilm, LEN_PEL);
-
-    fflush(stdin);
-    getStringOnly("Ingrese el titulo: ", film.titulo);
-
-    film.director = getIntOnly("Ingrese director: ");
-
-    fflush(stdin);
-    getStringOnly("Ingrese la nacionalidad: ", film.nacionalidad);
-
-    film.anio = validAnio("Ingrese el anio: ");
-
-    film.isEmpty = TAKEN;
-
-    return film;
-}
 
 int findFreeSlot(sFilm listFilm[], int len)
 {

@@ -34,3 +34,62 @@ void listar(sFilm listFilm[], int lenFilm, sDirector listDirec[], int lenDirec)
         system("cls");
     }while(choice != 3);
 }
+
+sFilm setFilm(sFilm listFilm[], sDirector listDirec[], int lenDirec)
+{
+    sFilm film;
+    int flag = 0;
+
+    film.id = nextId(listFilm, LEN_PEL);
+
+    fflush(stdin);
+    getStringOnly("Ingrese el titulo: ", film.titulo);
+
+    fflush(stdin);
+    getStringOnly("Ingrese la nacionalidad: ", film.nacionalidad);
+
+    film.anio = validAnio("Ingrese el anio: ");
+    do
+    {
+    printDirector(listDirec, lenDirec);
+    film.director = getIntOnly("Ingrese director: ");
+    int i;
+    for(i = 0; i < lenDirec; i++)
+    {
+        if(film.director != listDirec[i].id || film.director == 0)
+        {
+            flag = 0;
+        }
+        else
+        {
+            flag = 1;
+            break;
+        }
+    }
+    printf("Ese director no existe\n");
+    system("pause");
+    system("cls");
+    }while(flag != 1);
+    film.isEmpty = TAKEN;
+
+    return film;
+}
+
+int addFilm(sFilm listFilm[], sDirector listDirec[])
+{
+    int flag;
+    int indexFreeSlot;
+
+    indexFreeSlot = findFreeSlot(listFilm, LEN_PEL);
+    if(indexFreeSlot == -1)
+    {
+        printf("\nNo quedan espacios libres.\n");
+        flag = -1;
+    }
+    system("cls");
+    printf("ALTA\n\n");
+    listFilm[indexFreeSlot] = setFilm(listFilm, listDirec, LEN_DIREC);
+    flag = 0;
+
+    return flag;
+}

@@ -11,3 +11,19 @@
  *
  */
 void listar(sFilm listFilm[], int lenFilm, sDirector listDirec[], int lenDirec);
+
+/** \brief load the information about a film
+ *
+ * \param listFilm sFilm array of films
+ * \return sFilm data set of film
+ *
+ */
+sFilm setFilm(sFilm listFilm[], sDirector listDirec[], int lenDirec);
+
+/** \brief add a Film in array of Film
+ *
+ * \param listFilm[] sFilm array of Film
+ * \return int return (-1) if error, (0) if ok
+ *
+ */
+int addFilm(sFilm listFilm[], sDirector listDirec[]);
