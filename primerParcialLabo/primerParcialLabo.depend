@@ -73,7 +73,7 @@
 	<stdlib.h>
 	<string.h>
 
-1538768363 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\main.c
+1538940317 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\main.c
 	<stdio.h>
 	<stdlib.h>
 	"bibliotecaParcial.h"
@@ -82,7 +82,7 @@
 1538768279 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.h
 	"bibliotecaGetsYComprobaciones.h"
 
-1538764483 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.h
+1538940288 c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.h
 	"bibliotecaGetsYComprobaciones.h"
 
 1538768279 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialpeliculas.c
@@ -92,7 +92,7 @@
 	<conio.h>
 	"parcialPeliculas.h"
 
-1538767676 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.c
+1538940193 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\parcialdirectores.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -104,7 +104,7 @@
 	"parcialDirectores.h"
 	"parcialPeliculas.h"
 
-1538769364 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.c
+1538937043 source:c:\users\gustavo\desktop\primerparcial\primerparciallabo\bibliotecaparcial.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

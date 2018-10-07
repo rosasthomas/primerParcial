@@ -232,7 +232,7 @@ void initPeliculaHardCode(sFilm listFilm[])
     int id[4] = {100,101,102,103};
     char titulo[][50] = {"capitan america", "marte", "jupiter", "saturno"};
     int anio[4] = {2000,2001,2010,2018};
-    int director[4] = {1,2,3,4};
+    int director[4] = {100,101,102,103};
     char nacionalidad[][50] = {"argentina", "eeuu", "colombia", "venezuela"};
 
     int i;

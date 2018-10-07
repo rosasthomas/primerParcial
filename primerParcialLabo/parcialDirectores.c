@@ -36,18 +36,28 @@ sDirector setDirec(sDirector listDirec[])
     fflush(stdin);
     getStringOnly("Ingrese el pais origen: ", director.paisOrigen);
 
-    setDate(director);
+    director.fechaNacimiento = setDate();
 
     director.isEmpty = TAKEN;
 
     return director;
 }
 
-void setDate(sDirector director)
+sFecha setDate()
 {
-    director.fechaNacimiento.dia = 20;//validDay("Ingrese el dia: ");
-    director.fechaNacimiento.mes = 12;//validMonth("Ingrese el mes: ");
-    director.fechaNacimiento.anio = 2000;//validYearDirec("Ingrese el anio: ");
+    sDirector direc;
+    char barra[2] = {"/"};
+
+    validDay("Ingrese el dia: ", direc.fechaNacimiento.dia);
+    validMonth("Ingrese el mes: ", direc.fechaNacimiento.mes);
+    validYearDirec("Ingrese el anio: ", direc.fechaNacimiento.anio);
+    strcpy(direc.fechaNacimiento.fecha, direc.fechaNacimiento.dia);
+    strcat(direc.fechaNacimiento.fecha, barra);
+    strcat(direc.fechaNacimiento.fecha, direc.fechaNacimiento.mes);
+    strcat(direc.fechaNacimiento.fecha, barra);
+    strcat(direc.fechaNacimiento.fecha, direc.fechaNacimiento.anio);
+
+    return direc.fechaNacimiento;
 }
 int findFreeSlotDirec(sDirector listDirec[], int len)
 {
@@ -81,15 +91,15 @@ int nextIdDirec(sDirector listDirec[],int len)
     return value + 1;
 }
 
-int validDay(char mensaje[])
+void validDay(char mensaje[], char day[])
 {
-    int day;
     int flag;
+    int auxDay;
 
     do
    {
-        day = getIntOnly(mensaje);
-        if(day < 1 || day > 31)
+        auxDay = getIntOnly(mensaje);
+        if(auxDay < 1 || auxDay  > 31)
         {
             system("cls");
             printf("\nEl dia no es valido.\n");
@@ -98,21 +108,20 @@ int validDay(char mensaje[])
         else
         {
             flag = 1;
+            itoa(auxDay, day, 10);
         }
    }while(flag != 1);
-
-    return day;
 }
 
-int validMonth(char mensaje[])
+void validMonth(char mensaje[], char month[])
 {
-    int month;
     int flag;
+    int auxMonth;
 
     do
    {
-        month = getIntOnly(mensaje);
-        if(month < 1 || month > 12)
+        auxMonth = getIntOnly(mensaje);
+        if(auxMonth < 1 || auxMonth > 12)
         {
             system("cls");
             printf("\nEl mes no es valido.\n");
@@ -121,21 +130,21 @@ int validMonth(char mensaje[])
         else
         {
             flag = 1;
+            itoa(auxMonth, month, 10);
         }
    }while(flag != 1);
 
-    return month;
 }
 
-int validYearDirec(char mensaje[])
+void validYearDirec(char mensaje[], char year[])
 {
-    int year;
     int flag;
+    int auxYear;
 
     do
    {
-        year = getIntOnly(mensaje);
-        if(year < 1000 || year > 2018)
+        auxYear = getIntOnly(mensaje);
+        if(auxYear < 1600 || auxYear > 2018)
         {
             system("cls");
             printf("\nEl anio no es valido.\n");
@@ -144,18 +153,18 @@ int validYearDirec(char mensaje[])
         else
         {
             flag = 1;
+            itoa(auxYear, year, 10);
         }
    }while(flag != 1);
 
-    return year;
 }
 
 void printADirector(sDirector listDirec[], int index)
 {
     if(listDirec[index].isEmpty == TAKEN)
     {
-        printf(" %5d| %-15s       | %-10s          | %d\n", listDirec[index].id, listDirec[index].nombre,
-               listDirec[index].paisOrigen, listDirec[index].fechaNacimiento.dia);
+        printf(" %5d| %-15s       | %-10s         | %s \n", listDirec[index].id, listDirec[index].nombre,
+               listDirec[index].paisOrigen, listDirec[index].fechaNacimiento.fecha);
     }
 }
 
@@ -192,7 +201,7 @@ int removeDirec(sDirector listDirec[], int len)
     int flag;
 
     system("cls");
-    printf("BAJA (director)\n\n");
+    printf("BAJA(director)\n\n");
     printDirector(listDirec, len);
     getStringOnly("\nIngrese el nombre del director a dar de baja: ", auxNombre);
     index = findDirecByName(listDirec, len, auxNombre);
@@ -227,4 +236,23 @@ int findDirecByName(sDirector listDirec[], int len, char name[])
         }
     }
     return index;
+}
+
+void initDirectorHardCode(sDirector listDirec[])
+{
+    int id[4] = {100,101,102,103};
+    char nombre[][50] = {"Oscar", "Ana", "Juan", "Jose"};
+    char fecha[][11] = {"22/2/2000","10/11/1801","6/5/1978","30/8/2008"};
+    char paisOrigen[][50] = {"argentina", "eeuu", "colombia", "venezuela"};
+
+    int i;
+
+    for(i=0; i<4; i++)
+    {
+        listDirec[i].id = id[i];
+        listDirec[i].isEmpty = TAKEN;
+        strcpy(listDirec[i].nombre, nombre[i]);
+        strcpy(listDirec[i].paisOrigen, paisOrigen[i]);
+        strcpy(listDirec[i].fechaNacimiento.fecha, fecha[i]);
+    }
 }

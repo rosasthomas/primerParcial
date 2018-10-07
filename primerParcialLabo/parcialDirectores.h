@@ -5,9 +5,10 @@
 
 typedef struct
 {
-    int dia;
-    int mes;
-    int anio;
+    char dia[3];
+    char mes[3];
+    char anio[5];
+    char fecha[11];
 }sFecha;
 
 typedef struct
@@ -109,10 +110,45 @@ int findDirecByName(sDirector listDirec[], int len, char name[]);
  */
 int removeDirec(sDirector listDirec[], int len);
 
-int validDay(char mensaje[]);
+/** \brief validate if the day is between 1 and 31
+ *
+ * \param mensaje[] char message to show
+ * \param day[] char day to modify
+ * \return void
+ *
+ */
+void validDay(char mensaje[], char day[]);
 
-int validMonth(char mensaje[]);
+/** \brief validate if the month is between 1 and 12
+ *
+ * \param mensaje[] char message to show
+ * \param month[] char month to modify
+ * \return void
+ *
+ */
+void validMonth(char mensaje[], char month[]);
 
-int validYearDirec(char mensaje[]);
+/** \brief validate if the year is between 1600 and 2018
+ *
+ * \param mensaje[] char message to shoe
+ * \param year[] char year to modify
+ * \return void
+ *
+ */
+void validYearDirec(char mensaje[], char year[]);
 
-void setDate(sDirector director);
+/** \brief set the day, month an year in variable fecha
+ *
+ * \param void
+ * \return sFecha fecha
+ *
+ */
+sFecha setDate(void);
+
+/** \brief initialize harcode of directors
+ *
+ * \param listDirec[] sDirector array of directors
+ * \return void
+ *
+ */
+void initDirectorHardCode(sDirector listDirec[]);

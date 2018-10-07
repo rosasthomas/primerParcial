@@ -52,7 +52,7 @@ sFilm setFilm(sFilm listFilm[], sDirector listDirec[], int lenDirec)
     do
     {
     printDirector(listDirec, lenDirec);
-    film.director = getIntOnly("Ingrese director: ");
+    film.director = getIntOnly("Ingrese ID del director: ");
     int i;
     for(i = 0; i < lenDirec; i++)
     {
@@ -66,10 +66,14 @@ sFilm setFilm(sFilm listFilm[], sDirector listDirec[], int lenDirec)
             break;
         }
     }
-    printf("Ese director no existe\n");
+    if(flag == 0)
+    {
+        printf("Ese director no existe\n");
+    }
     system("pause");
     system("cls");
     }while(flag != 1);
+
     film.isEmpty = TAKEN;
 
     return film;

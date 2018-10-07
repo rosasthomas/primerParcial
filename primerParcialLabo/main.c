@@ -15,17 +15,19 @@ int main()
     int flagIsCharged = 1;
     int isErrorModify;
     int isErrorAddDirec;
+    int isErrorRemoveDirec;
 
     do
     {
         isErrorFilm = initFilm(listFilm, LEN_PEL);
         isErrorDirec = initDirec(listDirec, LEN_DIREC);
         initPeliculaHardCode(listFilm);
+        initDirectorHardCode(listDirec);
     }while(isErrorFilm == -1 || isErrorDirec == -1);
 
     do
     {
-        choice = getIntOnly("Ficha tecnica\n\n1.Alta de pelicula\n2.Modificar pelicula\n3.Baja pelicula\n4.Alta director\n5.\n6.Listar\n7.Salir\nIngrese una opcion: ");
+        choice = getIntOnly("Ficha tecnica\n\n1.Alta de pelicula\n2.Modificar pelicula\n3.Baja pelicula\n4.Alta director\n5.Baja director\n6.Listar\n7.Salir\nIngrese una opcion: ");
 
         switch(choice)
         {
@@ -85,7 +87,19 @@ int main()
                     printf("\nSe cargo correctamente.\n");
                 }
             break;
-        case 5:
+        case 5: //elminar director
+                isErrorRemoveDirec = removeDirec(listDirec, LEN_DIREC);
+               if(isErrorRemoveDirec == 0)
+                {
+                    system("cls");
+                    printf("\nSe dio de baja correctamente.\n");
+                }
+                else
+                {
+                    system("cls");
+                    printf("\n No se ha podido dar de baja el director.\n");
+                }
+
             break;
         case 6:
             if(flagIsCharged != 1)
