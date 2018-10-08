@@ -257,6 +257,7 @@ void direcMasPelis(sFilm listFilm[], int lenFilm, sDirector listDirec[], int len
 
     for(i = 0; i < lenDirec; i++)
     {
+        cont = 0;
        if(listDirec[i].isEmpty != FREE)
        {
         for(k = 0; k < lenFilm; k++)
@@ -268,7 +269,10 @@ void direcMasPelis(sFilm listFilm[], int lenFilm, sDirector listDirec[], int len
             }
         }
        }
+       if(cont > max)
+       {
         max = cont;
+       }
     }
     printf("Los directores con mas peliculas son: \n");
    for(m = 0; m < lenDirec; m++)
@@ -286,7 +290,7 @@ void direcMasPelis(sFilm listFilm[], int lenFilm, sDirector listDirec[], int len
        }
         if(contDos == max)
         {
-            printf("        %s\n",listDirec[m].nombre);
+            printf("                %s\n",listDirec[m].nombre);
         }
     }
 }
