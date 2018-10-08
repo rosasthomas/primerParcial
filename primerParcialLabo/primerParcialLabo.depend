@@ -116,14 +116,14 @@
 	<stdlib.h>
 	<string.h>
 
-1539007014 source:d:\rosas\primerparcial\primerparciallabo\bibliotecaparcial.c
+1539009163 source:d:\rosas\primerparcial\primerparciallabo\bibliotecaparcial.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	"bibliotecaParcial.h"
 
-1539007048 d:\rosas\primerparcial\primerparciallabo\bibliotecaparcial.h
+1539009464 d:\rosas\primerparcial\primerparciallabo\bibliotecaparcial.h
 	"parcialDirectores.h"
 	"parcialPeliculas.h"
 
