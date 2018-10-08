@@ -111,3 +111,48 @@
 	<conio.h>
 	"bibliotecaParcial.h"
 
+1538998747 source:d:\rosas\primerparcial\primerparciallabo\bibliotecagetsycomprobaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1539007014 source:d:\rosas\primerparcial\primerparciallabo\bibliotecaparcial.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"bibliotecaParcial.h"
+
+1539007048 d:\rosas\primerparcial\primerparciallabo\bibliotecaparcial.h
+	"parcialDirectores.h"
+	"parcialPeliculas.h"
+
+1538998747 d:\rosas\primerparcial\primerparciallabo\parcialdirectores.h
+	"bibliotecaGetsYComprobaciones.h"
+
+1538998747 d:\rosas\primerparcial\primerparciallabo\bibliotecagetsycomprobaciones.h
+
+1538998747 d:\rosas\primerparcial\primerparciallabo\parcialpeliculas.h
+	"bibliotecaGetsYComprobaciones.h"
+
+1538998946 source:d:\rosas\primerparcial\primerparciallabo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bibliotecaParcial.h"
+	"bibliotecaGetsYComprobaciones.h"
+
+1539000307 source:d:\rosas\primerparcial\primerparciallabo\parcialdirectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"bibliotecaGetsYComprobaciones.h"
+	"parcialDirectores.h"
+
+1538999089 source:d:\rosas\primerparcial\primerparciallabo\parcialpeliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"parcialPeliculas.h"
+
